@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".new_check_note"
+    android:background="@drawable/background_gradient">
+
+    <EditText
+        android:id="@+id/newCheckNoteTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
+        android:hint="Title"
+        android:textSize="30dp"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:layout_marginLeft="40dp"
+        android:layout_below="@+id/newCheckNoteTitle"
+        android:id="@+id/linearLayoutCheckItem"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+                    <EditText
+                    android:hint="Write here..."
+                    android:id="@+id/inputText"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:visibility="visible"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_below="@id/addCheck"
+        android:id="@+id/checkLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginLeft="50dp">
+                    <CheckBox
+                    android:id="@+id/checkboxItem"
+                    android:layout_marginLeft="130dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"/>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/addCheck"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/linearLayoutCheckItem"
+        android:layout_marginLeft="150dp"
+        app:icon="@drawable/ic_add"
+        style="@style/Widget.MaterialComponents.Button.TextButton.Icon"
+        android:text="add item"/>
+
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/saveBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="36dp"
+        android:layout_centerHorizontal="true"
+        android:backgroundTint="#B5ACAC"
+        android:src="@drawable/ic_save"
+        />
+</RelativeLayout>

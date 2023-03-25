@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="toolbarStyles" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="backgroundColor">@color/white</item>
+        <item name="android:navigationBarColor">#9A6D6D</item>
+        <item name="colorPrimaryDark">#816E33</item>
+
+
+
+
+    </style>
+
+
+
+
+</resources>
