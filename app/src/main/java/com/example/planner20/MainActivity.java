@@ -70,11 +70,6 @@ public class MainActivity extends AppCompatActivity {
                     case R.id.nav_share: {
                         Intent intent = new Intent(Intent.ACTION_SEND);
                         intent.setType("text/plain");
-                        String Body = "Download this app";
-                        String Sub = "http://play.google.com";
-                        intent.putExtra(Intent.EXTRA_TEXT, Body);
-                        intent.putExtra(Intent.EXTRA_TEXT, Sub);
-
                         startActivity(Intent.createChooser(intent, "share this app"));
                         break;
                     }
