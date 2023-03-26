@@ -16,10 +16,21 @@
 </group>
     <item>
         <menu>
+
             <item
                 android:icon="@drawable/ic_person"
                 android:id="@+id/nav_aboutMe"
                 android:title="About Me"
+                />
+            <item
+                android:icon="@drawable/ic_aboutapp"
+                android:id="@+id/nav_aboutApp"
+                android:title="About app"
+                />
+            <item
+                android:icon="@drawable/ic_exit"
+                android:id="@+id/nav_exit"
+                android:title="Exit"
                 />
         </menu>
     </item>

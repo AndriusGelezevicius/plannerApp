@@ -9,6 +9,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
+import android.provider.ContactsContract;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.animation.AlphaAnimation;
@@ -37,7 +38,9 @@ public class MainActivity extends AppCompatActivity {
     TextView textView;
     ArrayAdapter<String> NotesAdapter;
     ArrayList<String> Notes;
-    int noteIcon = R.drawable.ic_newnote;
+    private static final int REQUEST_CODE = 1;
+
+    int[] icons = {R.drawable.ic_newnote, R.drawable.ic_check,};
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
@@ -78,6 +81,22 @@ public class MainActivity extends AppCompatActivity {
                         startActivity(intent);
                         break;
                     }
+                    case R.id.nav_aboutApp: {
+                        openDialog();
+                        break;
+                    }
+                    case R.id.nav_exit: {
+                        // Finish the current activity and remove it from the back stack
+                        finish();
+                        // Remove all activities from the back stack and exit this app
+                        Intent intent = new Intent(Intent.ACTION_MAIN);
+                        intent.addCategory(Intent.CATEGORY_HOME);
+                        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                        startActivity(intent);
+                        System.exit(0);
+
+                        break;
+                    }
 
                 }
                 drawerLayout.closeDrawer(GravityCompat.START);
@@ -101,10 +120,12 @@ public class MainActivity extends AppCompatActivity {
 //        ImageView imageView = findViewById(R.id.noteIcon);
 //        if (imageResourceId != 0) {
 //            imageView.setImageResource(imageResourceId);}
-//        startActivityForResult(new Intent(MainActivity.this, newNote.class), 1);
 
         Notes.add(String.valueOf(new NotesID("title")));
+
+//        startActivityForResult(new Intent(MainActivity.this, newNote.class), 1);
         updateListView();
+
 
             list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                 @Override
@@ -175,6 +196,10 @@ protected void onActivityResult(int requestCode, int resultCode, Intent intent) 
         NotesAdapter.add(String.valueOf(a.getTitle()));
         NotesAdapter.notifyDataSetChanged();
     }
+}
+public void openDialog(){
+    dialog dialog = new dialog();
+    dialog.show(getSupportFragmentManager(), "dialog");
 }
     }
 

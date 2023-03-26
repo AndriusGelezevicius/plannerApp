@@ -41,9 +41,8 @@ public class newNote extends AppCompatActivity {
                     Intent i = new Intent(newNote.this, MainActivity.class);
                     i.putExtra("title", title);
 //                    i.putExtra("imageNote", imageResourceId);
-                    startActivity(i);
                     setResult(RESULT_OK, i);
-//                    finish();
+                    finish();
                 }
             }
         });
